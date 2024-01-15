@@ -12,13 +12,14 @@ const User = ()=>{
  useEffect(()=>{
     if(loading) return;
     if (!user) navigate("/");
-    userServices.getUserData(user,setUserData)
- },[user,loading, userData])
+    userServices.getUserData(user, setUserData)
+ },[user,loading])
 
+ 
     return(
         <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Atsijungti</a>
+          <a className="nav-link active" aria-current="page" href="#">Atsijungti:</a>
         </li>
 
         {user &&

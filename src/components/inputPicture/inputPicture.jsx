@@ -1,0 +1,56 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import * as service from "../../services/TimesCrudServices";
+
+
+export const InputPicture = (props) => {
+  const navigate = useNavigate();
+//   const { id } = useParams();
+  const [pictureData, setPictureData] = useState({
+    id: '',
+    title: '',
+    picture: ''
+  });
+
+  const [photoCount, setPhotoCount] = useState(0);
+  
+  useEffect(()=>{
+    service.getAllPhotos(phot =>{
+        setPhotoCount(phot.length);
+    })
+
+}, [])
+
+//   useEffect(() => {
+//     id && service.showById(item => setPictureData(item), id);
+//   }, [id]);
+
+  const handleChange = (event) => {
+    setPictureData({ ...pictureData, [event.target.name]: event.target.value });
+  };
+
+  const submitHandle = (event) => {
+    event.preventDefault();
+    pictureData.id = photoCount + 1;
+    service.addPhoto(pictureData);
+    navigate('/');
+    setPhotoCount(photoCount + 1);
+  };
+
+  return (
+    <form onSubmit={submitHandle} className="form">
+      <div className="form-group">
+        <input type="text" name="title" placeholder="Pavadinimas" className=" m-1 form-control" onChange={handleChange} value={pictureData.title} />
+      </div>
+      <div className="form-group">
+        <textarea name="picture" placeholder="Linkas" className=" m-1 form-control" onChange={handleChange} value={pictureData.picture} />
+      </div>
+      <div className="form-group">
+        <button type="submit" className="btn btn-primary">Saugoti</button>
+      </div>
+
+    </form>
+  );
+};
+
+

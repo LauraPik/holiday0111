@@ -1,0 +1,16 @@
+div.card{
+    border:none;
+    border-radius: none;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    --bs-card-inner-border-radius: none;
+}
+
+.modal.show-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+  }
+ 

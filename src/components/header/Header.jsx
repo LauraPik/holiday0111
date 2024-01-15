@@ -9,7 +9,7 @@ export const Header = ()=>{
         
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
 
-        <a href="" className="navbar-brand">Holiday App</a>
+        <a href="" className="navbar-brand">Holiday photos</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
