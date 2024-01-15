@@ -26,6 +26,7 @@ export const Register = () =>{
 
     }
     
+
     useEffect(()=>{
         if(loading) return;
         if(user) navigate('/Main')

@@ -19,7 +19,7 @@ const User = ()=>{
     return(
         <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Atsijungti:</a>
+          { user&& <a className="nav-link active" aria-current="page" href="#">Atsijungti:</a>}
         </li>
 
         {user &&

@@ -8,10 +8,12 @@ export const addPhoto = (data) =>{
     
 }
 
-export const getAllPhotos = (onPhotoChanged) =>{
+export const getAllPhotos = (onPhotoChanged,user) =>{
+    if(user !== null){
     firebase
     .firestore()
     .collection('photo')
+    .where("uid", "==", user?.uid)
     .onSnapshot((snapshot)=>{
         const newPhoto = snapshot.docs.map((doc)=>({
             id: doc.id,
@@ -20,7 +22,7 @@ export const getAllPhotos = (onPhotoChanged) =>{
         onPhotoChanged(newPhoto)
 
     })
-
+} 
 }
 
 export const showById = (item, id) =>{
@@ -31,3 +33,12 @@ export const showById = (item, id) =>{
     .get()
     .then((docRef)=>{item(docRef.data())})
 }
+
+export const deleteWork = (id) =>{
+    firebase
+    .firestore()
+    .collection('photo')
+    .doc(id)
+    .delete()
+}
+

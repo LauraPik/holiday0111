@@ -50,7 +50,7 @@ useEffect(()=>{
             <div className="mb-3">
                 <input type="password" className="form-control" name="password" placeholder="Slaptazodis" onChange={handleChange} />
             </div>
-            <div className="mb-3"><button type="submit">Registruotis</button></div>
+            <div className="mb-3"><button type="submit">Prisijungti</button></div>
             <div className="mb-3">
                 <p>Neturite paskyros ?<Link to="/register">Registruotis</Link></p>
             </div>

@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import * as service from "../../services/TimesCrudServices";
-
+import { auth } from "../../services/AuthServices";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const InputPicture = (props) => {
   const navigate = useNavigate();
-//   const { id } = useParams();
+  const [user] = useAuthState(auth);
+
   const [pictureData, setPictureData] = useState({
-    id: '',
+    number:'',
     title: '',
-    picture: ''
+    picture: '',
+    uid:''
   });
 
   const [photoCount, setPhotoCount] = useState(0);
@@ -17,7 +20,7 @@ export const InputPicture = (props) => {
   useEffect(()=>{
     service.getAllPhotos(phot =>{
         setPhotoCount(phot.length);
-    })
+    }, user)
 
 }, [])
 
@@ -26,12 +29,12 @@ export const InputPicture = (props) => {
 //   }, [id]);
 
   const handleChange = (event) => {
-    setPictureData({ ...pictureData, [event.target.name]: event.target.value });
+    setPictureData({ ...pictureData, [event.target.name]: event.target.value, uid: user.uid });
   };
 
   const submitHandle = (event) => {
     event.preventDefault();
-    pictureData.id = photoCount + 1;
+    pictureData.number = photoCount + 1;
     service.addPhoto(pictureData);
     navigate('/');
     setPhotoCount(photoCount + 1);

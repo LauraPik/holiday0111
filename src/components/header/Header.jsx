@@ -18,7 +18,7 @@ export const Header = ()=>{
         <User/>
 
         </div>
-        <Link to="/main" className='navBar-container-recipe--link nav-link'>Pagrindinis</Link>
+        
 
         
     
