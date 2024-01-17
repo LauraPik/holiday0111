@@ -1,0 +1,8 @@
+.row-layoutFive {
+    width: 100%;
+    .card:nth-child(even) .card-img-top {
+        aspect-ratio: 16/11;
+        clip-path: circle();
+      }
+  }
+  

@@ -34,7 +34,7 @@ const Photo = (props) => {
         <div className="modal-dialog" >
           <div className="modal-content">
             <div className="modal-body">
-              <img src={props.picture}  alt={props.title} />
+              <img className="modal-body-picture" src={props.picture}  alt={props.title} />
               <button type="button" className='btn-close' data-bs-dismiss="modal" aria-label='Close'></button>
             </div>
           </div>
