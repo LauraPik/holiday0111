@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/holiday0111/static/css/main.62eff904.css",
+    "main.js": "/holiday0111/static/js/main.a99c5c2c.js",
+    "static/media/6.png": "/holiday0111/static/media/6.894c140093f1d4508669.png",
+    "static/media/3.png": "/holiday0111/static/media/3.0f379c5b1eb05e540b6d.png",
+    "static/media/9.png": "/holiday0111/static/media/9.0498bec295a143a55b36.png",
+    "static/media/1.png": "/holiday0111/static/media/1.e15570760ea645649177.png",
+    "index.html": "/holiday0111/index.html",
+    "main.62eff904.css.map": "/holiday0111/static/css/main.62eff904.css.map",
+    "main.a99c5c2c.js.map": "/holiday0111/static/js/main.a99c5c2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62eff904.css",
+    "static/js/main.a99c5c2c.js"
+  ]
+}
