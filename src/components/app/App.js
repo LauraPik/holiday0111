@@ -11,7 +11,7 @@ import './App.scss'
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="holiday0111"> 
       <Header/>
         <Routes>
           <Route path="/" element={<Login/>}/>
